@@ -2,12 +2,22 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal()
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://raw.githubusercontent.com/recloudstream/repository/master/") }
     }
     dependencies {
         classpath("com.android.tools.build:gradle:8.7.3")
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://raw.githubusercontent.com/recloudstream/repository/master/") }
     }
 }
 
@@ -18,6 +28,9 @@ subprojects {
 
     android {
         compileSdk = 35
+        defaultConfig {
+            minSdk = 21
+        }
     }
 
     dependencies {
@@ -29,7 +42,7 @@ subprojects {
     }
 
     cloudstream {
-        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "YOUR_GITHUB_USER/YOUR_REPO")
+        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "By-Void-X/ByVoid-Anime-CloudStream")
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
