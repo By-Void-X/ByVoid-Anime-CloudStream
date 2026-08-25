@@ -20,10 +20,11 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
       - name: Build Extensions
-        run: |
-          chmod +x ./gradlew
-          ./gradlew makePlugins
+        run: gradle makePlugins
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
