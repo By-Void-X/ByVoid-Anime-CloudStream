@@ -13,7 +13,7 @@ class DonghuastreamPlugin : Plugin() {
 }
 
 class DonghuastreamProvider : MainAPI() {
-    override var mainUrl = "https://donghuastream.example"
+    override var mainUrl = "https://donghuastream.org/"
     override var name = "Donghuastream"
     override val lang = "id"
     override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
