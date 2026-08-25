@@ -13,7 +13,7 @@ class SokujaPlugin : Plugin() {
 }
 
 class SokujaProvider : MainAPI() {
-    override var mainUrl = "https://sokuja.example"
+    override var mainUrl = "https://x6.sokuja.uk/"
     override var name = "Sokuja"
     override val lang = "id"
     override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
