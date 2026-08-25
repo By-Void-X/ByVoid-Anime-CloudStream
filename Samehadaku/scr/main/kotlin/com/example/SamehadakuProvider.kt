@@ -13,7 +13,7 @@ class SamehadakuPlugin : Plugin() {
 }
 
 class SamehadakuProvider : MainAPI() {
-    override var mainUrl = "https://samehadaku.example"
+    override var mainUrl = "https://v2.samehadaku.how/"
     override var name = "Samehadaku"
     override val lang = "id"
     override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
