@@ -26,10 +26,12 @@ jobs:
           gradle-version: '7.5'
 
       - name: Build Extensions
-        run: gradle makePlugins
+        run: |
+          cd CloudStream3WebTemplate
+          gradle makePlugins
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          folder: CloudStream3WebTemplate/build
           branch: gh-pages
