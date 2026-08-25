@@ -13,7 +13,7 @@ class OtakudesuPlugin : Plugin() {
 }
 
 class OtakudesuProvider : MainAPI() {
-    override var mainUrl = "https://otakudesu.example"
+    override var mainUrl = "https://otakudesu.blog/"
     override var name = "Otakudesu"
     override val lang = "id"
     override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
