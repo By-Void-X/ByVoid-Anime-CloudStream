@@ -2,13 +2,14 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
         maven { url = uri("https://jitpack.io") }
         maven { url = uri("https://raw.githubusercontent.com/recloudstream/repository/master/") }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.7.3")
+        classpath("com.android.tools.build:gradle:7.4.2")
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
 }
 
@@ -27,7 +28,7 @@ subprojects {
     apply(plugin = "com.lagradost.cloudstream3.gradle")
 
     android {
-        compileSdk = 35
+        compileSdk = 34
         defaultConfig {
             minSdk = 21
         }
@@ -42,6 +43,7 @@ subprojects {
     }
 
     cloudstream {
+        // Otomatis mengambil path repo kamu di GitHub Actions
         setRepo(System.getenv("GITHUB_REPOSITORY") ?: "By-Void-X/ByVoid-Anime-CloudStream")
     }
 
